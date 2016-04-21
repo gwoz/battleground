@@ -1,0 +1,5 @@
+/log/*
+/.bundle
+!/log/keep
+.DS_Store
+/tmp
