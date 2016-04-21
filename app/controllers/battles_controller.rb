@@ -1,5 +1,5 @@
-class BattlesController < Application::API
+class BattlesController < ApplicationController
   def show
-    @battle = Battle.include
+    @battle = Battle.find(1)
   end
 end
