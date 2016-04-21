@@ -1,3 +1,4 @@
-class TasksController < ApplicationController
+class TasksController < ActionController::Base
+
 
 end
