@@ -7,7 +7,7 @@ users = [{username: 'brett', email: 'brett@example.com', password_digest: '12345
 users.each do |user|
   User.create(user)
 end
-
+puts 'Added users'
 
 # User Locations
 
@@ -15,6 +15,7 @@ user_ids = [1,2,3]
 
 150.times do UserLocation.create({user_id: user_ids.sample, lat: 40 + rand, long: 74 + rand}) end
 
+puts 'Added user locations'
 
 # Tasks
 
@@ -27,14 +28,12 @@ tasks.each do |task|
   Task.create(task)
 end
 
+puts 'Added tasks'
+
 # Battles
 
 task_ids = [1,2,3]
 
-users.each do |user|
-  user.battles << Battle.create({task_id: task_ids.sample, winner: 1})
-end
+5.times do User.find(user_ids.sample).battles << Battle.create({task_id: task_ids.sample, winner: 1}) end
 
-
-
-
+puts 'Added battles'
