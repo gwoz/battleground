@@ -169,3 +169,885 @@ Started GET "/" for ::1 at 2016-04-21 16:31:30 -0400
 Processing by Rails::WelcomeController#index as HTML
   Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
 Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (23.1ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("username", "email", "password_digest") VALUES ($1, $2, $3) RETURNING "id"  [["username", "john"], ["email", "john@example.com"], ["password_digest", "123456"]]
+  [1m[36m (16.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160421191356)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX  "index_users_on_username" ON "users"  ("username")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421191356"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Migrating to CreateUserLocations (20160421191707)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.1ms)[0m  CREATE TABLE "user_locations" ("id" serial primary key, "user_id" integer NOT NULL, "lat" float NOT NULL, "long" float NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX  "index_user_locations_on_user_id" ON "user_locations"  ("user_id")[0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_user_locations_on_lat" ON "user_locations"  ("lat")
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX  "index_user_locations_on_long" ON "user_locations"  ("long")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160421191707"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateBattles (20160421191936)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "battles" ("id" serial primary key, "winner" integer, "task_id" integer) [0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX  "index_battles_on_task_id" ON "battles"  ("task_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421191936"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Migrating to CreateTasks (20160421192232)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.4ms)[0m  CREATE TABLE "tasks" ("id" serial primary key, "title" character varying NOT NULL, "description" character varying) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421192232"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to CreateUsersBattles (20160421192547)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.7ms)[0m  CREATE TABLE "users_battles" ("id" serial primary key, "battle_id" integer NOT NULL, "user_id" integer NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_users_battles_on_battle_id" ON "users_battles"  ("battle_id")[0m
+  [1m[35m (1.0ms)[0m  CREATE  INDEX  "index_users_battles_on_user_id" ON "users_battles"  ("user_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421192547"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'battles'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tasks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_locations'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users_battles'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("username", "email", "password_digest") VALUES ($1, $2, $3) RETURNING "id"  [["username", "john"], ["email", "john@example.com"], ["password_digest", "123456"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36m (121.4ms)[0m  [1mDROP DATABASE IF EXISTS "battleground_development"[0m
+  [1m[35m (121.9ms)[0m  DROP DATABASE IF EXISTS "battleground_test"
+  [1m[36m (285.7ms)[0m  [1mCREATE DATABASE "battleground_development" ENCODING = 'unicode'[0m
+  [1m[35m (250.0ms)[0m  CREATE DATABASE "battleground_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (4.8ms)[0m  CREATE TABLE "battles" ("id" serial primary key, "winner" integer, "task_id" integer) 
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX  "index_battles_on_task_id" ON "battles" USING btree ("task_id")[0m
+  [1m[35m (3.7ms)[0m  CREATE TABLE "tasks" ("id" serial primary key, "title" character varying NOT NULL, "description" character varying) 
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "user_locations" ("id" serial primary key, "user_id" integer NOT NULL, "lat" float NOT NULL, "long" float NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE  INDEX  "index_user_locations_on_lat" ON "user_locations" USING btree ("lat")
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX  "index_user_locations_on_long" ON "user_locations" USING btree ("long")[0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_user_locations_on_user_id" ON "user_locations" USING btree ("user_id")
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX  "index_users_on_username" ON "users" USING btree ("username")
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "users_battles" ("id" serial primary key, "battle_id" integer NOT NULL, "user_id" integer NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX  "index_users_battles_on_battle_id" ON "users_battles" USING btree ("battle_id")
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX  "index_users_battles_on_user_id" ON "users_battles" USING btree ("user_id")[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160421192547')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160421191356')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160421191707')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160421191936')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160421192232')[0m
+  [1m[35mSQL (0.5ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (19.7ms)[0m  [1mCREATE TABLE "battles" ("id" serial primary key, "winner" integer, "task_id" integer) [0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_battles_on_task_id" ON "battles" USING btree ("task_id")
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "tasks" ("id" serial primary key, "title" character varying NOT NULL, "description" character varying) [0m
+  [1m[35m (2.5ms)[0m  CREATE TABLE "user_locations" ("id" serial primary key, "user_id" integer NOT NULL, "lat" float NOT NULL, "long" float NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_user_locations_on_lat" ON "user_locations" USING btree ("lat")[0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_user_locations_on_long" ON "user_locations" USING btree ("long")
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_user_locations_on_user_id" ON "user_locations" USING btree ("user_id")[0m
+  [1m[35m (3.3ms)[0m  CREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mCREATE  INDEX  "index_users_on_username" ON "users" USING btree ("username")[0m
+  [1m[35m (4.6ms)[0m  CREATE TABLE "users_battles" ("id" serial primary key, "battle_id" integer NOT NULL, "user_id" integer NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE  INDEX  "index_users_battles_on_battle_id" ON "users_battles" USING btree ("battle_id")[0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_users_battles_on_user_id" ON "users_battles" USING btree ("user_id")
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.6ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160421192547')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160421191356')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160421191707')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160421191936')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160421192232')
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "john"], ["email", "john@example.com"], ["password_digest", "123456"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36m (0.3ms)[0m  [1mDROP DATABASE IF EXISTS "battleground_development"[0m
+  [1m[35m (0.2ms)[0m  DROP DATABASE IF EXISTS "battleground_test"
+  [1m[36m (306.5ms)[0m  [1mCREATE DATABASE "battleground_development" ENCODING = 'unicode'[0m
+  [1m[35m (247.6ms)[0m  CREATE DATABASE "battleground_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.0ms)[0m  CREATE TABLE "battles" ("id" serial primary key, "winner" integer, "task_id" integer) 
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX  "index_battles_on_task_id" ON "battles" USING btree ("task_id")[0m
+  [1m[35m (4.8ms)[0m  CREATE TABLE "tasks" ("id" serial primary key, "title" character varying NOT NULL, "description" character varying) 
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "user_locations" ("id" serial primary key, "user_id" integer NOT NULL, "lat" float NOT NULL, "long" float NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE  INDEX  "index_user_locations_on_lat" ON "user_locations" USING btree ("lat")
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_user_locations_on_long" ON "user_locations" USING btree ("long")[0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_user_locations_on_user_id" ON "user_locations" USING btree ("user_id")
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_users_on_username" ON "users" USING btree ("username")
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "users_battles" ("id" serial primary key, "battle_id" integer NOT NULL, "user_id" integer NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE  INDEX  "index_users_battles_on_battle_id" ON "users_battles" USING btree ("battle_id")
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_users_battles_on_user_id" ON "users_battles" USING btree ("user_id")[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160421192547')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160421191356')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160421191707')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160421191936')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160421192232')[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (18.5ms)[0m  [1mCREATE TABLE "battles" ("id" serial primary key, "winner" integer, "task_id" integer) [0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_battles_on_task_id" ON "battles" USING btree ("task_id")
+  [1m[36m (4.3ms)[0m  [1mCREATE TABLE "tasks" ("id" serial primary key, "title" character varying NOT NULL, "description" character varying) [0m
+  [1m[35m (2.7ms)[0m  CREATE TABLE "user_locations" ("id" serial primary key, "user_id" integer NOT NULL, "lat" float NOT NULL, "long" float NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_user_locations_on_lat" ON "user_locations" USING btree ("lat")[0m
+  [1m[35m (1.6ms)[0m  CREATE  INDEX  "index_user_locations_on_long" ON "user_locations" USING btree ("long")
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_user_locations_on_user_id" ON "user_locations" USING btree ("user_id")[0m
+  [1m[35m (3.1ms)[0m  CREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE  INDEX  "index_users_on_username" ON "users" USING btree ("username")[0m
+  [1m[35m (3.4ms)[0m  CREATE TABLE "users_battles" ("id" serial primary key, "battle_id" integer NOT NULL, "user_id" integer NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_users_battles_on_battle_id" ON "users_battles" USING btree ("battle_id")[0m
+  [1m[35m (1.7ms)[0m  CREATE  INDEX  "index_users_battles_on_user_id" ON "users_battles" USING btree ("user_id")
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160421192547')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160421191356')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160421191707')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160421191936')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160421192232')
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (2.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160421191356)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX  "index_users_on_username" ON "users"  ("username")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421191356"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Migrating to CreateUserLocations (20160421191707)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.8ms)[0m  CREATE TABLE "user_locations" ("id" serial primary key, "user_id" integer, "lat" float NOT NULL, "long" float NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX  "index_user_locations_on_lat" ON "user_locations"  ("lat")[0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX  "index_user_locations_on_long" ON "user_locations"  ("long")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421191707"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Migrating to CreateBattles (20160421191936)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "battles" ("id" serial primary key, "winner" integer, "task_id" integer) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421191936"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to CreateTasks (20160421192232)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (3.3ms)[0m  CREATE TABLE "tasks" ("id" serial primary key, "title" character varying NOT NULL, "description" character varying) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421192232"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Migrating to CreateUsersBattles (20160421192547)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (3.3ms)[0m  CREATE TABLE "users_battles" ("id" serial primary key, "battle_id" integer, "user_id" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421192547"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'battles'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tasks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_locations'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users_battles'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("username", "email", "password_digest") VALUES ($1, $2, $3) RETURNING "id"  [["username", "john"], ["email", "john@example.com"], ["password_digest", "123456"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mBattle Load (0.6ms)[0m  SELECT  "battles".* FROM "battles"  ORDER BY "battles"."id" ASC LIMIT 1
+  [1m[36m (7.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160421191356)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX  "index_users_on_username" ON "users"  ("username")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421191356"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Migrating to CreateUserLocations (20160421191707)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.8ms)[0m  CREATE TABLE "user_locations" ("id" serial primary key, "user_id" integer, "lat" float NOT NULL, "long" float NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE  INDEX  "index_user_locations_on_lat" ON "user_locations"  ("lat")[0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX  "index_user_locations_on_long" ON "user_locations"  ("long")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421191707"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to CreateBattles (20160421191936)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "battles" ("id" serial primary key, "winner" integer, "task_id" integer) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421191936"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Migrating to CreateTasks (20160421192232)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (3.3ms)[0m  CREATE TABLE "tasks" ("id" serial primary key, "title" character varying NOT NULL, "description" character varying) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421192232"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Migrating to CreateBattlesUsers (20160421192547)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.6ms)[0m  CREATE TABLE "battles_users" ("id" serial primary key, "battle_id" integer, "user_id" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421192547"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'battles'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'battles_users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tasks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_locations'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("username", "email", "password_digest") VALUES ($1, $2, $3) RETURNING "id"  [["username", "john"], ["email", "john@example.com"], ["password_digest", "123456"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mBattle Load (0.7ms)[0m  [1mSELECT "battles".* FROM "battles" INNER JOIN "battles_users" ON "battles"."id" = "battles_users"."battle_id" WHERE "battles_users"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "battles" ("task_id", "winner") VALUES ($1, $2) RETURNING "id"  [["task_id", 1], ["winner", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "battles_users" ("user_id", "battle_id") VALUES ($1, $2) RETURNING "id"[0m  [["user_id", 1], ["battle_id", 1]]
+  [1m[35m (15.7ms)[0m  COMMIT
+  [1m[36mBattle Load (0.6ms)[0m  [1mSELECT "battles".* FROM "battles" INNER JOIN "battles_users" ON "battles"."id" = "battles_users"."battle_id" WHERE "battles_users"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mBattle Load (0.4ms)[0m  [1mSELECT "battles".* FROM "battles" INNER JOIN "battles_users" ON "battles"."id" = "battles_users"."battle_id" WHERE "battles_users"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "brett"], ["email", "brett@example.com"], ["password_digest", "123456"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest") VALUES ($1, $2, $3) RETURNING "id"  [["username", "mike"], ["email", "mike@example.com"], ["password_digest", "123456"]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "john"], ["email", "john@example.com"], ["password_digest", "123456"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.81069623115822], ["long", 74.7923889018402]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.64146105066755], ["long", 74.98243702768998]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.909547800907546], ["long", 74.28070557963446]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.057378525728275], ["long", 74.88196922293425]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.42163185144084], ["long", 74.63949899578803]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.6644471729083], ["long", 74.67983743517966]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.96045347538271], ["long", 74.56912079487907]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.23588844977317], ["long", 74.42858235399036]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.984801363357754], ["long", 74.94079631214719]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.153369351856014], ["long", 74.73534690792464]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.12060948570097], ["long", 74.75525235674998]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.67387195079569], ["long", 74.64345124100345]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.78273001082202], ["long", 74.62852514267385]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.85448977105713], ["long", 74.59362668372204]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.12397623655992], ["long", 74.5218740096049]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.18537667539311], ["long", 74.28368543404893]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.46039687714514], ["long", 74.43663130371857]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.969469785641884], ["long", 74.62228375826508]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.74053743200546], ["long", 74.52226450280138]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.24243624056308], ["long", 74.27205313075767]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.16398861071821], ["long", 74.17157058112359]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.71790240828682], ["long", 74.51213589353534]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.09222377033981], ["long", 74.00682901689248]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.360282903991006], ["long", 74.36662082236514]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.018508916304064], ["long", 74.26583547944728]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.825960923469566], ["long", 74.32989709944755]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.10855246478775], ["long", 74.85329694280622]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.02121848932881], ["long", 74.59307814322706]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.38915410040029], ["long", 74.52358575106855]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.84087490866486], ["long", 74.28446681179877]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.29187644947998], ["long", 74.09629768164807]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.24184087686447], ["long", 74.749618308131]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.57173117124025], ["long", 74.12288866206703]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.580747808809704], ["long", 74.59977216072849]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.00650196277709], ["long", 74.71144152370344]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.79159944964133], ["long", 74.3041100698234]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.85788295906924], ["long", 74.86261629188037]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.68918082347527], ["long", 74.66420835317503]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.13599596128849], ["long", 74.72582348175622]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.54476257140558], ["long", 74.82474834344382]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.719534896905024], ["long", 74.0710048108916]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.75026626920134], ["long", 74.6796718735435]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.18026111046281], ["long", 74.3567069487264]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.41650834768409], ["long", 74.17017771876554]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.805915377087466], ["long", 74.93204072922049]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.77013914667047], ["long", 74.74800390083846]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.30892013140562], ["long", 74.73787509398502]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.224469641081356], ["long", 74.70599198269306]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.086384211883946], ["long", 74.51692091372773]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.65694726196031], ["long", 74.98293583044877]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.369424426260686], ["long", 74.25058007578788]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.6743584323696], ["long", 74.26870252796105]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.022042763225976], ["long", 74.32232179417184]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.49141436296547], ["long", 74.69051924578106]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.658044284406074], ["long", 74.69117746184976]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.56875095883813], ["long", 74.30150858545046]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.32013810854473], ["long", 74.18983389444135]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.15416315743205], ["long", 74.78661043966993]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.46859141345583], ["long", 74.34166770850605]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.525385385984585], ["long", 74.69666069439602]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.51973740646657], ["long", 74.59543269156487]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.96154429820734], ["long", 74.9011885479604]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.10780494368227], ["long", 74.65989342493869]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.203744469825125], ["long", 74.63549993413679]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.76348119607087], ["long", 74.67420938108029]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.98593544120465], ["long", 74.77235609937632]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.65308677921384], ["long", 74.89116270211768]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.022730833600875], ["long", 74.37845098025448]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.825583479616945], ["long", 74.1638697906218]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.874530901401165], ["long", 74.95308374168614]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.38565391026081], ["long", 74.10372037612314]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.78171827999652], ["long", 74.94841892702246]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.661242255895296], ["long", 74.20946897289025]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.05491224181083], ["long", 74.56917158995036]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.686838088581915], ["long", 74.9217962244961]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.594805275982736], ["long", 74.98541337571508]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.79474753982038], ["long", 74.83751366723952]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.69243487155779], ["long", 74.49023578672936]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.99295699474893], ["long", 74.74444333117185]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.190950692257324], ["long", 74.85378791185443]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.58746500957461], ["long", 74.58870673371274]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.88336734548349], ["long", 74.80984348403736]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.57299921581663], ["long", 74.18772025026028]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.791165117747255], ["long", 74.60880999180154]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.894280454216904], ["long", 74.61565572685195]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.14772125172083], ["long", 74.52187049016665]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.23976370515715], ["long", 74.82899187398151]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.42864360668903], ["long", 74.21920663762549]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.0245508196093], ["long", 74.79310550720834]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.21661848425438], ["long", 74.8440967688323]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.612411054314805], ["long", 74.39143121367275]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.07371158064688], ["long", 74.10598711391377]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.2193878186306], ["long", 74.57860370890434]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.373130018432825], ["long", 74.94117749380166]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.693857259470356], ["long", 74.02033284812984]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.81347657164468], ["long", 74.54536477658745]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.016352133920755], ["long", 74.95227145818951]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.53409688329736], ["long", 74.47393491059348]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.76355132238107], ["long", 74.85284585573238]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.39468009763487], ["long", 74.68175496279638]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.942512005212784], ["long", 74.28827662344816]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.46371582905157], ["long", 74.23139542379911]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.80942901782398], ["long", 74.44431958930782]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.573683649352034], ["long", 74.49926014195417]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.52076238388318], ["long", 74.36649783995887]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.85538500909269], ["long", 74.77634593827057]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.85263783658073], ["long", 74.81855380476551]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.84293420696826], ["long", 74.86203328457677]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.54987823394383], ["long", 74.03885279473963]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.092059314054076], ["long", 74.26952758466358]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.75655500719519], ["long", 74.28062385550274]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.53029726458775], ["long", 74.31730229094612]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.211771796383594], ["long", 74.52718371170053]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.30893022752213], ["long", 74.57488616374052]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.312619036236065], ["long", 74.9574094428634]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.27426620471317], ["long", 74.6533452684829]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.9815062971597], ["long", 74.68382594288788]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.58397296433518], ["long", 74.37169962153861]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.62797654477961], ["long", 74.29517106997329]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.878464383569714], ["long", 74.20373289904416]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.23733543029306], ["long", 74.41712306167801]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.55481820448997], ["long", 74.00804887035544]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.132384364168665], ["long", 74.77404198516807]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.175621442998434], ["long", 74.48610486857694]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.71063804455677], ["long", 74.54434382778798]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.80056318608099], ["long", 74.62793521526488]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.28972075589571], ["long", 74.00162160072621]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.76351793760237], ["long", 74.91992165127904]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.49820611827571], ["long", 74.44041032322967]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.04430425253081], ["long", 74.34066788679185]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["lat", 40.50146683428387], ["long", 74.13552796335898]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.94265361989533], ["long", 74.66951345418855]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.071275982493674], ["long", 74.20491620917039]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.63901207373723], ["long", 74.83659720907899]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.67575338074088], ["long", 74.21946369225962]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.0233797992945], ["long", 74.21563103340476]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.037642555604265], ["long", 74.89766388371082]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.19309374036766], ["long", 74.51605388246607]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.987488394994706], ["long", 74.69185468015924]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.95405376724753], ["long", 74.37607406935179]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.835615444970536], ["long", 74.75690693913353]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.4785893470365], ["long", 74.42648303010415]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.375731958403136], ["long", 74.10447716282785]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.4822185977882], ["long", 74.61835252175308]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 2], ["lat", 40.205265317768635], ["long", 74.1267607839816]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 3], ["lat", 40.26246600561738], ["long", 74.74413383018069]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.74441469014689], ["long", 74.60603278199723]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 2], ["lat", 40.92532255133214], ["long", 74.84172320132379]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 3], ["lat", 40.96826162430785], ["long", 74.0911678801753]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_locations" ("user_id", "lat", "long") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["lat", 40.63793227068513], ["long", 74.33677769647038]]
+  [1m[35m (0.3ms)[0m  COMMIT
