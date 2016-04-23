@@ -3890,3 +3890,28 @@ ORDER BY c.conname
   [1m[35mUserLocation Load (1.4ms)[0m  SELECT "user_locations".* FROM "user_locations"
   [1m[36mTask Load (0.7ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
   [1m[35mBattle Load (0.6ms)[0m  SELECT "battles".* FROM "battles"
+  [1m[36m (35.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (2.3ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160421191356)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (35.6ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX  "index_users_on_username" ON "users"  ("username")
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421191356"]]
+  [1m[35m (15.1ms)[0m  COMMIT
+Migrating to CreateBattles (20160421191936)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.6ms)[0m  CREATE TABLE "battles" ("id" serial primary key, "winner" integer, "task_id" integer) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421191936"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to CreateTasks (20160421192232)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (3.2ms)[0m  CREATE TABLE "tasks" ("id" serial primary key, "title" character varying NOT NULL, "description" character varying) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421192232"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Migrating to CreateBattlesUsers (20160421192547)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.3ms)[0m  CREATE TABLE "battles_users" ("id" serial primary key, "battle_id" integer, "user_id" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160421192547"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to CreateGeolocations (20160423194916)
