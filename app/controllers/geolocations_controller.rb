@@ -1,9 +1,11 @@
 class GeolocationsController < ApplicationController
   def create
-    @geolocation = Geolocation.create(user: find_user_by_email, lonlat: make_wkt_point)
+    @user = find_user_by_email
+    @user_geolocation = Geolocation.create(user: @user, lonlat: make_wkt_point)
   end
 
   private
+
   def find_user_by_email
     User.find_by(email: params[:email])
   end

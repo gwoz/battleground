@@ -15000,3 +15000,31 @@ ActionView::MissingTemplate (Missing template geolocations/create, application/c
   Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
   Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (69.7ms)
   [1m[36mGeolocation Load (5.8ms)[0m  [1mSELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1[0m
+  [1m[36mGeolocation Load (34.6ms)[0m  [1mSELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1[0m
+  [1m[35mGeolocation Load (0.4ms)[0m  SELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1
+  [1m[36mGeolocation Load (1.9ms)[0m  [1mSELECT "geolocations".* FROM "geolocations" WHERE (created_at < '2016-04-24 19:42:59.852570')[0m
+  [1m[35mGeolocation Load (0.7ms)[0m  SELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-04-24 19:39:10.416282')
+  [1m[36mGeolocation Load (0.7ms)[0m  [1mSELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-04-24 19:39:18.426300')[0m
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["lonlat", "0020000001000010e6c052ae3e3e469f0040446075c9f98724"], ["created_at", "2016-04-24 20:33:28.235460"], ["updated_at", "2016-04-24 20:33:28.235460"]]
+  [1m[36m (15.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["lonlat", "0020000001000010e6c05282aa0cfccf904044647607550117"], ["created_at", "2016-04-24 20:34:00.011613"], ["updated_at", "2016-04-24 20:34:00.011613"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["lonlat", "0020000001000010e6c052a58ef599a6c240448661093138dd"], ["created_at", "2016-04-24 20:38:18.524657"], ["updated_at", "2016-04-24 20:38:18.524657"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["lonlat", "0020000001000010e6c052aff465e250564044d1af88ca64ad"], ["created_at", "2016-04-24 20:38:29.114787"], ["updated_at", "2016-04-24 20:38:29.114787"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mGeolocation Load (6.0ms)[0m  [1mSELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1[0m
+  [1m[35mGeolocation Load (0.7ms)[0m  SELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1
+  [1m[36mGeolocation Load (0.7ms)[0m  [1mSELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-04-24 20:39:24.479962')[0m
+  [1m[35mGeolocation Load (0.6ms)[0m  SELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-04-24 20:39:41.737682')
+  [1m[36mGeolocation Load (2.1ms)[0m  [1mSELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-03-21 03:24:59.040038')[0m
+  [1m[35mGeolocation Load (0.6ms)[0m  SELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1
+  [1m[36mGeolocation Load (7.2ms)[0m  [1mSELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1[0m
+  [1m[35mGeolocation Load (0.7ms)[0m  SELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1
+  [1m[36mGeolocation Load (0.6ms)[0m  [1mSELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1[0m
+  [1m[35mGeolocation Load (2.2ms)[0m  SELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2006-10-22 15:44:23.367003')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
