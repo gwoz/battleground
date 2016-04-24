@@ -1,6 +1,6 @@
-class CreateGeolocation < ActiveRecord::Migration
+class CreateGeolocations < ActiveRecord::Migration
   def change
-    create_table :geolocation do |t|
+    create_table :geolocations do |t|
       t.references :user
       t.float      :speed
       t.st_point   :lonlat, geographic: true

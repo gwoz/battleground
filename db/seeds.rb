@@ -9,13 +9,13 @@ users.each do |user|
 end
 puts 'Added users'
 
-# User Locations
+# User GeoLocations
 
 user_ids = [1,2,3]
 
-150.times do UserLocation.create({user_id: user_ids.sample, lat: 40 + rand, long: 74 + rand}) end
+150.times do Geolocation.create({user_id: user_ids.sample, lonlat: "POINT (#{-74.00 - rand} #{40.71 + rand})"}) end
 
-puts 'Added user locations'
+puts 'Added user geolocations'
 
 # Tasks
 

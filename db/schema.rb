@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421192547) do
+ActiveRecord::Schema.define(version: 20160423194916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
 
   create_table "battles", force: :cascade do |t|
     t.integer "winner"
@@ -26,19 +27,32 @@ ActiveRecord::Schema.define(version: 20160421192547) do
     t.integer "user_id"
   end
 
+  create_table "geolocations", force: :cascade do |t|
+    t.integer   "user_id"
+    t.float     "speed"
+    t.geography "lonlat",              limit: {:srid=>4326, :type=>"point", :geographic=>true}
+    t.float     "accuracy"
+    t.float     "heading"
+    t.float     "altitude"
+    t.float     "altitude_accuracy"
+    t.boolean   "is_heartbeat"
+    t.boolean   "sample"
+    t.boolean   "is_moving"
+    t.float     "odometer"
+    t.string    "uuid"
+    t.string    "activity_type"
+    t.float     "activity_confidence"
+    t.float     "battery_level"
+    t.boolean   "battery_is_charging"
+    t.string    "app_timestamp"
+    t.datetime  "created_at",                                                                   null: false
+    t.datetime  "updated_at",                                                                   null: false
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.string "title",       null: false
     t.string "description"
   end
-
-  create_table "user_locations", force: :cascade do |t|
-    t.integer "user_id"
-    t.float   "lat",     null: false
-    t.float   "long",    null: false
-  end
-
-  add_index "user_locations", ["lat"], name: "index_user_locations_on_lat", using: :btree
-  add_index "user_locations", ["long"], name: "index_user_locations_on_long", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string "username",        null: false
