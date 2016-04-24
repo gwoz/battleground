@@ -2,6 +2,8 @@ class GeolocationsController < ApplicationController
   def create
     @user = find_user_by_email
     @user_geolocation = Geolocation.create(user: @user, lonlat: make_wkt_point)
+    @challenger = @geolocation.find_closest_challenger
+    @challenger_geolocation = @challenger.geolocations.last
   end
 
   private
