@@ -15000,3 +15000,1207 @@ ActionView::MissingTemplate (Missing template geolocations/create, application/c
   Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
   Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (69.7ms)
   [1m[36mGeolocation Load (5.8ms)[0m  [1mSELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1[0m
+  [1m[36mGeolocation Load (34.6ms)[0m  [1mSELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1[0m
+  [1m[35mGeolocation Load (0.4ms)[0m  SELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1
+  [1m[36mGeolocation Load (1.9ms)[0m  [1mSELECT "geolocations".* FROM "geolocations" WHERE (created_at < '2016-04-24 19:42:59.852570')[0m
+  [1m[35mGeolocation Load (0.7ms)[0m  SELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-04-24 19:39:10.416282')
+  [1m[36mGeolocation Load (0.7ms)[0m  [1mSELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-04-24 19:39:18.426300')[0m
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["lonlat", "0020000001000010e6c052ae3e3e469f0040446075c9f98724"], ["created_at", "2016-04-24 20:33:28.235460"], ["updated_at", "2016-04-24 20:33:28.235460"]]
+  [1m[36m (15.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["lonlat", "0020000001000010e6c05282aa0cfccf904044647607550117"], ["created_at", "2016-04-24 20:34:00.011613"], ["updated_at", "2016-04-24 20:34:00.011613"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["lonlat", "0020000001000010e6c052a58ef599a6c240448661093138dd"], ["created_at", "2016-04-24 20:38:18.524657"], ["updated_at", "2016-04-24 20:38:18.524657"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["lonlat", "0020000001000010e6c052aff465e250564044d1af88ca64ad"], ["created_at", "2016-04-24 20:38:29.114787"], ["updated_at", "2016-04-24 20:38:29.114787"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mGeolocation Load (6.0ms)[0m  [1mSELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1[0m
+  [1m[35mGeolocation Load (0.7ms)[0m  SELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1
+  [1m[36mGeolocation Load (0.7ms)[0m  [1mSELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-04-24 20:39:24.479962')[0m
+  [1m[35mGeolocation Load (0.6ms)[0m  SELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-04-24 20:39:41.737682')
+  [1m[36mGeolocation Load (2.1ms)[0m  [1mSELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-03-21 03:24:59.040038')[0m
+  [1m[35mGeolocation Load (0.6ms)[0m  SELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1
+  [1m[36mGeolocation Load (7.2ms)[0m  [1mSELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1[0m
+  [1m[35mGeolocation Load (0.7ms)[0m  SELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1
+  [1m[36mGeolocation Load (0.6ms)[0m  [1mSELECT  "geolocations".* FROM "geolocations"  ORDER BY "geolocations"."id" DESC LIMIT 1[0m
+  [1m[35mGeolocation Load (2.2ms)[0m  SELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2006-10-22 15:44:23.367003')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+
+
+Started GET "/battles/4" for ::1 at 2016-04-24 17:42:14 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BattlesController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[35mBattle Load (0.6ms)[0m  SELECT  "battles".* FROM "battles" WHERE "battles"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHABTM_Users Load (0.4ms)[0m  [1mSELECT "battles_users".* FROM "battles_users" WHERE "battles_users"."battle_id" IN (1)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" IN (1)[0m
+  Rendered battles/show.json.jbuilder (19.6ms)
+Completed 200 OK in 219ms (Views: 62.1ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-24 17:42:18 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (12.0ms)
+Completed 200 OK in 60ms (Views: 59.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-24 17:42:18 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:42:22 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.72, "longitude"=>-122.0253108, "latitude"=>37.33020173, "accuracy"=>10, "heading"=>86.81, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>14729.46751052518, "uuid"=>"603CAF41-6B39-4B54-8591-25C08C093778", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:41:53.318Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e819eb1308f144042aa440cdfb760"], ["created_at", "2016-04-24 21:42:22.792052"], ["updated_at", "2016-04-24 21:42:22.792052"]]
+  [1m[36m (15.5ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 661ms (ActiveRecord: 581.7ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.5ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:42:23 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.72, "longitude"=>-122.0253108, "latitude"=>37.33020173, "accuracy"=>10, "heading"=>86.81, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>14729.46751052518, "uuid"=>"0AEE0393-DBEE-4CB1-92CF-734CA3538548", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:41:53.318Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e819eb1308f144042aa440cdfb760"], ["created_at", "2016-04-24 21:42:23.193130"], ["updated_at", "2016-04-24 21:42:23.193130"]]
+  [1m[36m (15.5ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 16.5ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (80.6ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:42:23 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.75, "longitude"=>-122.0237485, "latitude"=>37.33021892, "accuracy"=>5, "heading"=>90.46, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "is_moving"=>false, "odometer"=>14729.46751052518, "uuid"=>"1C433617-9451-4F51-A6B6-CA788566741B", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:42:22.319Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e8185186db50f4042aa449d12f5d1"], ["created_at", "2016-04-24 21:42:23.383814"], ["updated_at", "2016-04-24 21:42:23.383814"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.2ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.6ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:42:23 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.75, "longitude"=>-122.0237485, "latitude"=>37.33021892, "accuracy"=>5, "heading"=>90.46, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "is_moving"=>false, "odometer"=>14867.93906570721, "uuid"=>"BB982D47-7A99-4CD0-B483-E2CB374C96CA", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:42:22.319Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e8185186db50f4042aa449d12f5d1"], ["created_at", "2016-04-24 21:42:23.555232"], ["updated_at", "2016-04-24 21:42:23.555232"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.1ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.9ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:42:59 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.75, "longitude"=>-122.0237485, "latitude"=>37.33021892, "accuracy"=>5, "heading"=>90.46, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>14867.93906570721, "uuid"=>"4E30E614-E31A-4B71-B4C8-37426EDF2DDF", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:42:26.319Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (1.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e8185186db50f4042aa449d12f5d1"], ["created_at", "2016-04-24 21:42:59.317071"], ["updated_at", "2016-04-24 21:42:59.317071"]]
+  [1m[36m (45.2ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 48.6ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (104.9ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:42:59 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.75, "longitude"=>-122.0237485, "latitude"=>37.33021892, "accuracy"=>5, "heading"=>90.46, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>14867.93906570721, "uuid"=>"AAD24921-3FE9-49BF-AEA7-D35889C7CD00", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:42:26.319Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e8185186db50f4042aa449d12f5d1"], ["created_at", "2016-04-24 21:42:59.862211"], ["updated_at", "2016-04-24 21:42:59.862211"]]
+  [1m[36m (15.0ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 15.8ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.9ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:43:00 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>4.08, "longitude"=>-122.02216391, "latitude"=>37.33010689, "accuracy"=>5, "heading"=>92.94, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "is_moving"=>false, "odometer"=>14867.93906570721, "uuid"=>"F4018DF1-5A04-4DFB-8ECC-9B73FE21AAB4", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:42:59.301Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e816b222d267f4042aa40f14c5dfd"], ["created_at", "2016-04-24 21:43:00.055195"], ["updated_at", "2016-04-24 21:43:00.055195"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.0ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.8ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:43:00 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>4.08, "longitude"=>-122.02216391, "latitude"=>37.33010689, "accuracy"=>5, "heading"=>92.94, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "is_moving"=>false, "odometer"=>15008.92225858011, "uuid"=>"33BA7F43-8F62-4EE4-B500-DFDA731DF6B8", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:42:59.301Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e816b222d267f4042aa40f14c5dfd"], ["created_at", "2016-04-24 21:43:00.215218"], ["updated_at", "2016-04-24 21:43:00.215218"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.8ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (78.9ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:43:04 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>4.08, "longitude"=>-122.02216391, "latitude"=>37.33010689, "accuracy"=>5, "heading"=>92.94, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>15008.92225858011, "uuid"=>"E7314D24-2E4F-4C4E-AD30-0971C8E4D429", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:43:03.301Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e816b222d267f4042aa40f14c5dfd"], ["created_at", "2016-04-24 21:43:04.639524"], ["updated_at", "2016-04-24 21:43:04.639524"]]
+  [1m[36m (15.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 16.4ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.5ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:43:04 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>4.08, "longitude"=>-122.02216391, "latitude"=>37.33010689, "accuracy"=>5, "heading"=>92.94, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>15008.92225858011, "uuid"=>"5861EC6A-60EF-4108-9995-77C1AAFD8C52", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:43:03.301Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e816b222d267f4042aa40f14c5dfd"], ["created_at", "2016-04-24 21:43:04.831590"], ["updated_at", "2016-04-24 21:43:04.831590"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.2ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.9ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:43:05 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.65, "longitude"=>-122.02188644, "latitude"=>37.33010093, "accuracy"=>5, "heading"=>91.79, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "is_moving"=>false, "odometer"=>15033.52185648348, "uuid"=>"BC8FDB0F-1446-497E-9D56-A52F8318AA25", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:43:05.301Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e8166966201a84042aa40bf4d5d56"], ["created_at", "2016-04-24 21:43:05.384896"], ["updated_at", "2016-04-24 21:43:05.384896"]]
+  [1m[36m (22.5ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 23.3ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.5ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:43:05 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.65, "longitude"=>-122.02188644, "latitude"=>37.33010093, "accuracy"=>5, "heading"=>91.79, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "is_moving"=>false, "odometer"=>15008.92225858011, "uuid"=>"D2D15C6E-E4EE-486F-A575-3EEA52C8FA80", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:43:05.301Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e8166966201a84042aa40bf4d5d56"], ["created_at", "2016-04-24 21:43:05.608336"], ["updated_at", "2016-04-24 21:43:05.608336"]]
+  [1m[36m (15.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 16.1ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.8ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:47:06 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.65, "longitude"=>-122.02188644, "latitude"=>37.33010093, "accuracy"=>5, "heading"=>91.79, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>15033.52185648348, "uuid"=>"13FB3422-7583-4E3A-B4C7-171AD61B81C8", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:43:09.301Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e8166966201a84042aa40bf4d5d56"], ["created_at", "2016-04-24 21:47:06.935142"], ["updated_at", "2016-04-24 21:47:06.935142"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 6.2ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.3ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:47:07 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.65, "longitude"=>-122.02188644, "latitude"=>37.33010093, "accuracy"=>5, "heading"=>91.79, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>15033.52185648348, "uuid"=>"88DE3D51-47D3-4B50-B107-541F9795F19D", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:43:09.301Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e8166966201a84042aa40bf4d5d56"], ["created_at", "2016-04-24 21:47:07.102427"], ["updated_at", "2016-04-24 21:47:07.102427"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.2ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.6ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:47:07 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.09, "longitude"=>-122.021233, "latitude"=>37.32472184, "accuracy"=>10, "heading"=>281.73, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>15033.52185648348, "uuid"=>"795E86B3-2066-452E-BE17-3E84B9944310", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:47:07.303Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e815be1a826244042a9907c398c69"], ["created_at", "2016-04-24 21:47:07.343657"], ["updated_at", "2016-04-24 21:47:07.343657"]]
+  [1m[36m (15.7ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 16.5ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.9ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:47:07 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.65, "longitude"=>-122.02188644, "latitude"=>37.33010093, "accuracy"=>5, "heading"=>91.79, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>15033.52185648348, "uuid"=>"6A61DFDC-EE44-4D9A-ACAE-8F147C635980", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:43:09.301Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e8166966201a84042aa40bf4d5d56"], ["created_at", "2016-04-24 21:47:07.526135"], ["updated_at", "2016-04-24 21:47:07.526135"]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 2.5ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.2ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:47:08 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.39, "longitude"=>-122.02127163, "latitude"=>37.32472734, "accuracy"=>10, "heading"=>281.33, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>15033.52185648348, "uuid"=>"8C82B1F1-C918-4AD4-885D-D25484624F4A", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:47:08.321Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e815c83aecbb04042a990aa5cb563"], ["created_at", "2016-04-24 21:47:08.356259"], ["updated_at", "2016-04-24 21:47:08.356259"]]
+  [1m[36m (15.5ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 17.4ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.6ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:47:08 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.65, "longitude"=>-122.02188644, "latitude"=>37.33010093, "accuracy"=>5, "heading"=>91.79, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "is_moving"=>false, "odometer"=>15033.52185648348, "uuid"=>"C021D0A0-5C44-4094-9B3C-09D7F31463D7", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:43:09.301Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e8166966201a84042aa40bf4d5d56"], ["created_at", "2016-04-24 21:47:08.555588"], ["updated_at", "2016-04-24 21:47:08.555588"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.1ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.8ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:47:09 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.42, "longitude"=>-122.02131077, "latitude"=>37.32472922, "accuracy"=>10, "heading"=>273.46, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>15033.52185648348, "uuid"=>"6BE2CF1E-7522-41A6-BA15-1BA0D4C3248F", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:47:09.315Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e815d27d90cf74042a990ba21fa51"], ["created_at", "2016-04-24 21:47:09.336788"], ["updated_at", "2016-04-24 21:47:09.336788"]]
+  [1m[36m (16.1ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 16.8ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.2ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:47:10 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.65, "longitude"=>-122.02188644, "latitude"=>37.33010093, "accuracy"=>5, "heading"=>91.79, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "is_moving"=>false, "odometer"=>15033.52185648348, "uuid"=>"EB058155-3F2E-47E6-A589-259707B2E2B6", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:43:09.301Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (13.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (4.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.9ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e8166966201a84042aa40bf4d5d56"], ["created_at", "2016-04-24 21:47:10.381217"], ["updated_at", "2016-04-24 21:47:10.381217"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 22.5ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.5ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:50:58 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.42, "longitude"=>-122.02135132, "latitude"=>37.32473245, "accuracy"=>10, "heading"=>275.18, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>15033.52185648348, "uuid"=>"6EDAB125-DE56-4AF1-AE4C-5D811B3BB479", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:47:14.303Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e815dd1ed48174042a990d53a5998"], ["created_at", "2016-04-24 21:50:58.257635"], ["updated_at", "2016-04-24 21:50:58.257635"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 4.7ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (153.5ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:50:58 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.42, "longitude"=>-122.02135132, "latitude"=>37.32473245, "accuracy"=>10, "heading"=>275.18, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>15033.52185648348, "uuid"=>"AEBE04F0-779B-49CD-B419-ED5E0AD0C2DD", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:47:14.303Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e815dd1ed48174042a990d53a5998"], ["created_at", "2016-04-24 21:50:58.533135"], ["updated_at", "2016-04-24 21:50:58.533135"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.6ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.8ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:50:58 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.73, "longitude"=>-122.02686455, "latitude"=>37.32797041, "accuracy"=>5, "heading"=>0.73, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "is_moving"=>false, "odometer"=>15033.52185648348, "uuid"=>"C6C2D754-B826-4D0C-80F7-41CBF4CD8161", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:50:58.330Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e81b82616eafe4042a9faef3480bb"], ["created_at", "2016-04-24 21:50:58.697151"], ["updated_at", "2016-04-24 21:50:58.697151"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.3ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.3ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:50:58 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.73, "longitude"=>-122.02686455, "latitude"=>37.32797041, "accuracy"=>5, "heading"=>0.73, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "is_moving"=>false, "odometer"=>15640.07438672661, "uuid"=>"AB96F95A-AB1A-43A6-BCD7-D00AF7B1EF61", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:50:58.330Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e81b82616eafe4042a9faef3480bb"], ["created_at", "2016-04-24 21:50:58.855544"], ["updated_at", "2016-04-24 21:50:58.855544"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.2ms)
+
+NoMethodError (undefined method `find_closest_challenger' for nil:NilClass):
+  app/controllers/geolocations_controller.rb:6:in `create'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.1ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:51:30 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.73, "longitude"=>-122.02686455, "latitude"=>37.32797041, "accuracy"=>5, "heading"=>0.73, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>15640.07438672661, "uuid"=>"22FD240F-3DFB-4C52-BE14-7F0FC6663E2A", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:51:02.330Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e81b82616eafe4042a9faef3480bb"], ["created_at", "2016-04-24 21:51:30.735546"], ["updated_at", "2016-04-24 21:51:30.735546"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mGeolocation Load (25.9ms)[0m  SELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-04-24 21:46:30.738433')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mGeolocation Load (0.5ms)[0m  SELECT  "geolocations".* FROM "geolocations" WHERE "geolocations"."user_id" = $1  ORDER BY "geolocations"."id" DESC LIMIT 1  [["user_id", 7]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "battles" ("task_id") VALUES ($1) RETURNING "id"  [["task_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "battles_users" ("battle_id", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["battle_id", 52], ["user_id", 7]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "battles_users" ("battle_id", "user_id") VALUES ($1, $2) RETURNING "id"  [["battle_id", 52], ["user_id", 7]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 38.3ms)
+
+ActionView::MissingTemplate (Missing template geolocations/create, application/create with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/Users/apprentice/Desktop/battleground/app/views"
+):
+  actionview (4.2.6) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.6) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (70.4ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:51:31 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.73, "longitude"=>-122.02686455, "latitude"=>37.32797041, "accuracy"=>5, "heading"=>0.73, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>15640.07438672661, "uuid"=>"39D2825E-B9B2-48FE-9D38-7CC37A12D8F1", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:51:02.330Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e81b82616eafe4042a9faef3480bb"], ["created_at", "2016-04-24 21:51:31.067716"], ["updated_at", "2016-04-24 21:51:31.067716"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mGeolocation Load (0.7ms)[0m  SELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-04-24 21:46:31.071082')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mGeolocation Load (0.6ms)[0m  SELECT  "geolocations".* FROM "geolocations" WHERE "geolocations"."user_id" = $1  ORDER BY "geolocations"."id" DESC LIMIT 1  [["user_id", 7]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "battles" ("task_id") VALUES ($1) RETURNING "id"  [["task_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "battles_users" ("battle_id", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["battle_id", 53], ["user_id", 7]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "battles_users" ("battle_id", "user_id") VALUES ($1, $2) RETURNING "id"  [["battle_id", 53], ["user_id", 7]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 5.9ms)
+
+ActionView::MissingTemplate (Missing template geolocations/create, application/create with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/Users/apprentice/Desktop/battleground/app/views"
+):
+  actionview (4.2.6) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.6) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (69.8ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:51:31 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.77, "longitude"=>-122.02685646, "latitude"=>37.3291425, "accuracy"=>10, "heading"=>357.86, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>15640.07438672661, "uuid"=>"35DCBA2E-10B4-4B7F-8ACE-724FF5924713", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:51:31.329Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e81b8042858ba4042aa2157689ca2"], ["created_at", "2016-04-24 21:51:31.360614"], ["updated_at", "2016-04-24 21:51:31.360614"]]
+  [1m[36m (16.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mGeolocation Load (0.7ms)[0m  SELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-04-24 21:46:31.381276')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mGeolocation Load (0.6ms)[0m  SELECT  "geolocations".* FROM "geolocations" WHERE "geolocations"."user_id" = $1  ORDER BY "geolocations"."id" DESC LIMIT 1  [["user_id", 7]]
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "battles" ("task_id") VALUES ($1) RETURNING "id"  [["task_id", 1]]
+  [1m[36m (15.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "battles_users" ("battle_id", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["battle_id", 54], ["user_id", 7]]
+  [1m[35m (15.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "battles_users" ("battle_id", "user_id") VALUES ($1, $2) RETURNING "id"  [["battle_id", 54], ["user_id", 7]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 52.6ms)
+
+ActionView::MissingTemplate (Missing template geolocations/create, application/create with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/Users/apprentice/Desktop/battleground/app/views"
+):
+  actionview (4.2.6) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.6) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (72.8ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:51:31 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.73, "longitude"=>-122.02686455, "latitude"=>37.32797041, "accuracy"=>5, "heading"=>0.73, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "sample"=>true, "is_moving"=>false, "odometer"=>15640.07438672661, "uuid"=>"B711CDF1-C4F4-4923-8316-6121778B4783", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:51:02.330Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e81b82616eafe4042a9faef3480bb"], ["created_at", "2016-04-24 21:51:31.621730"], ["updated_at", "2016-04-24 21:51:31.621730"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mGeolocation Load (0.7ms)[0m  SELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-04-24 21:46:31.624988')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mGeolocation Load (0.6ms)[0m  SELECT  "geolocations".* FROM "geolocations" WHERE "geolocations"."user_id" = $1  ORDER BY "geolocations"."id" DESC LIMIT 1  [["user_id", 7]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "battles" ("task_id") VALUES ($1) RETURNING "id"  [["task_id", 1]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "battles_users" ("battle_id", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["battle_id", 55], ["user_id", 7]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "battles_users" ("battle_id", "user_id") VALUES ($1, $2) RETURNING "id"  [["battle_id", 55], ["user_id", 7]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 5.7ms)
+
+ActionView::MissingTemplate (Missing template geolocations/create, application/create with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/Users/apprentice/Desktop/battleground/app/views"
+):
+  actionview (4.2.6) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.6) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (74.5ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:51:32 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.73, "longitude"=>-122.02685463, "latitude"=>37.32917735, "accuracy"=>5, "heading"=>0.26, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "is_moving"=>false, "odometer"=>15640.07438672661, "uuid"=>"C3BF036B-4AC3-43D3-BBEF-92ADDA45233B", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:51:32.314Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (1.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (1.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e81b7fc7b66284042aa227bc06abf"], ["created_at", "2016-04-24 21:51:32.413818"], ["updated_at", "2016-04-24 21:51:32.413818"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mGeolocation Load (0.7ms)[0m  SELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-04-24 21:46:32.419584')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mGeolocation Load (0.6ms)[0m  SELECT  "geolocations".* FROM "geolocations" WHERE "geolocations"."user_id" = $1  ORDER BY "geolocations"."id" DESC LIMIT 1  [["user_id", 7]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "battles" ("task_id") VALUES ($1) RETURNING "id"  [["task_id", 1]]
+  [1m[36m (14.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "battles_users" ("battle_id", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["battle_id", 56], ["user_id", 7]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "battles_users" ("battle_id", "user_id") VALUES ($1, $2) RETURNING "id"  [["battle_id", 56], ["user_id", 7]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 24.7ms)
+
+ActionView::MissingTemplate (Missing template geolocations/create, application/create with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/Users/apprentice/Desktop/battleground/app/views"
+):
+  actionview (4.2.6) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.6) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (80.9ms)
+
+
+Started POST "/geolocations" for ::1 at 2016-04-24 17:51:32 -0400
+Processing by GeolocationsController#create as JSON
+  Parameters: {"geolocation"=>{"coords"=>{"speed"=>3.73, "longitude"=>-122.02685463, "latitude"=>37.32917735, "accuracy"=>5, "heading"=>0.26, "altitude"=>0, "altitudeAccuracy"=>-1}, "is_heartbeat"=>false, "is_moving"=>false, "odometer"=>15774.02802198978, "uuid"=>"C07447CD-8765-44B4-8828-551B7929BE79", "activity"=>{"type"=>"unknown", "confidence"=>100}, "battery"=>{"level"=>-1, "is_charging"=>false}, "timestamp"=>"2016-04-24T21:51:32.314Z"}, "email"=>"jpcase104@gmail.com"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jpcase104@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "geolocations" ("user_id", "lonlat", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 7], ["lonlat", "0020000001000010e6c05e81b7fc7b66284042aa227bc06abf"], ["created_at", "2016-04-24 21:51:32.654659"], ["updated_at", "2016-04-24 21:51:32.654659"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mGeolocation Load (0.7ms)[0m  SELECT "geolocations".* FROM "geolocations" WHERE (created_at > '2016-04-24 21:46:32.657584')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mGeolocation Load (0.5ms)[0m  SELECT  "geolocations".* FROM "geolocations" WHERE "geolocations"."user_id" = $1  ORDER BY "geolocations"."id" DESC LIMIT 1  [["user_id", 7]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "battles" ("task_id") VALUES ($1) RETURNING "id"  [["task_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "battles_users" ("battle_id", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["battle_id", 57], ["user_id", 7]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "battles_users" ("battle_id", "user_id") VALUES ($1, $2) RETURNING "id"  [["battle_id", 57], ["user_id", 7]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 5.4ms)
+
+ActionView::MissingTemplate (Missing template geolocations/create, application/create with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/Users/apprentice/Desktop/battleground/app/views"
+):
+  actionview (4.2.6) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.6) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (73.4ms)
