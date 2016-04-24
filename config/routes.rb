@@ -6,6 +6,7 @@ Rails.application.routes.draw do
    # root 'welcome#index'
   resources :tasks
   resources :battles, only: :show, defaults: {format: :json}
+  resources :geolocations, only: :create
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
