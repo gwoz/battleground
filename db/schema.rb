@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20160423194916) do
     t.string "username",        null: false
     t.string "email",           null: false
     t.string "password_digest", null: false
+    t.string "image_url"
   end
 
   add_index "users", ["username"], name: "index_users_on_username", using: :btree
