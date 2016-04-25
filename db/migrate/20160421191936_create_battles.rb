@@ -3,6 +3,7 @@ class CreateBattles < ActiveRecord::Migration
     create_table :battles do |t|
       t.integer :winner
       t.references :task
+      t.timestamps null: false
     end
   end
 end
