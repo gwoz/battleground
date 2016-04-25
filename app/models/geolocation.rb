@@ -15,6 +15,6 @@ class Geolocation < ActiveRecord::Base
   end
 
   def get_recent_geolocations
-    Geolocation.where("created_at > ?", MINUTES_AGO.minutes.ago)
+    Geolocation.includes(:user).where("created_at > ?", MINUTES_AGO.minutes.ago).where(users: {in_battle: false})
   end
 end
