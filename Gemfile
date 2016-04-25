@@ -6,6 +6,9 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 gem 'pg'
+
+gem 'pry-rails'
+
 gem 'rgeo'
 gem 'activerecord-postgis-adapter'
 gem 'pry'
