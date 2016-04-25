@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 20160423194916) do
     t.string   "avatar"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.string   "image_url"
   end
 
 end
