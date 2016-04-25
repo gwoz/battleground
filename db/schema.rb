@@ -39,12 +39,10 @@ ActiveRecord::Schema.define(version: 20160421192547) do
   add_index "user_locations", ["user_id"], name: "index_user_locations_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string "username",        null: false
-    t.string "email",           null: false
-    t.string "password_digest", null: false
+    t.string   "email",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
   create_table "users_battles", force: :cascade do |t|
     t.integer "battle_id", null: false
