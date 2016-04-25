@@ -1,7 +1,7 @@
 # Users
-users = [{username: 'brett', email: 'brett@example.com', password_digest: '123456', image_url: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-alien-monster.png'},
-         {username: 'mike', email: 'mike@example.com', password_digest: '123456', image_url: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-nerd-pug.png'},
-         {username: 'john', email: 'john@example.com', password_digest: '123456', image_url: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ponsy-deer.png'}
+users = [{email: 'brett@example.com'},
+         {email: 'mike@example.com'},
+         {email: 'john@example.com'}
         ]
 
 users.each do |user|
