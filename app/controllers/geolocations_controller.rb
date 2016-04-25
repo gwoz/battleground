@@ -7,14 +7,15 @@ class GeolocationsController < ApplicationController
     if @challenger
       @challenger_geolocation = @challenger.geolocations.last
 
-      # @user.in_battle = true
-      # @challenger.in_battle = true
+      @user.in_battle = true
+      @challenger.in_battle = true
 
       @battle = Battle.create(task_id: 1)
       @battle.users << @user
       @battle.users << @challenger
 
       # render 'battles/show', @battle
+      binding.pry
     end
   end
 
