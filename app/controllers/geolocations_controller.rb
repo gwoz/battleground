@@ -15,7 +15,7 @@ class GeolocationsController < ApplicationController
       @battle.users << @challenger
 
       # render 'battles/show', @battle
-      binding.pry
+      # binding.pry
     end
   end
 
