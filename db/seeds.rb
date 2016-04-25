@@ -13,7 +13,7 @@ puts 'Added users'
 
 user_ids = [1,2,3]
 
-150.times do Geolocation.create({user_id: user_ids.sample, lonlat: "POINT (#{-74.00 - rand} #{40.71 + rand})"}) end
+150.times do Geolocation.create({user_id: user_ids.sample, lonlat: "POINT (#{-122.02639735} #{37.33020503})"}) end
 
 puts 'Added user geolocations'
 
