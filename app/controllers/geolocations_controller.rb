@@ -4,6 +4,7 @@ class GeolocationsController < ApplicationController
     @user_geolocation = Geolocation.create(user: @user, lonlat: make_wkt_point)
 
     @challenger = @user_geolocation.find_closest_challenger
+    binding.pry
     if @challenger
       @challenger_geolocation = @challenger.geolocations.last
 
@@ -13,9 +14,9 @@ class GeolocationsController < ApplicationController
       @battle = Battle.create(task_id: 1)
       @battle.users << @user
       @battle.users << @challenger
-
-      # render 'battles/show', @battle
+      render 'battles/show', @battle
     end
+    render nothing: true
   end
 
   private

@@ -1,5 +1,5 @@
-MINUTES_AGO = 5
-NEARBY_DISTANCE_MAX = 50
+MINUTES_AGO = 5000
+NEARBY_DISTANCE_MAX = 50000
 
 class Geolocation < ActiveRecord::Base
   belongs_to :user
@@ -15,6 +15,6 @@ class Geolocation < ActiveRecord::Base
   end
 
   def get_recent_geolocations
-    Geolocation.includes(:user).where("created_at > ?", MINUTES_AGO.minutes.ago).where(users: {in_battle: false})
+    Geolocation.where("created_at > ?", MINUTES_AGO.minutes.ago)
   end
 end
