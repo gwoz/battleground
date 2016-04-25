@@ -1,18 +1,17 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.6'
 
 gem 'rails-api'
 
 gem 'spring', :group => :development
-
-
 gem 'pg'
 
 gem 'pry-rails'
 
-
+gem 'rgeo'
+gem 'activerecord-postgis-adapter'
+gem 'pry'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

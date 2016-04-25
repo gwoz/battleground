@@ -30,6 +30,9 @@ GEM
       activemodel (= 4.2.6)
       activesupport (= 4.2.6)
       arel (~> 6.0)
+    activerecord-postgis-adapter (3.1.4)
+      activerecord (~> 4.2)
+      rgeo-activerecord (>= 4.0.4)
     activesupport (4.2.6)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
@@ -58,7 +61,7 @@ GEM
     mime-types-data (3.2016.0221)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
-    multi_json (1.11.2)
+    multi_json (1.11.3)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.4)
@@ -99,6 +102,10 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (11.1.2)
+    rgeo (0.5.3)
+    rgeo-activerecord (4.0.5)
+      activerecord (~> 4.2)
+      rgeo (~> 0.3)
     slop (3.6.0)
     spring (1.7.1)
     sprockets (3.6.0)
@@ -117,11 +124,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-postgis-adapter
   jbuilder
   pg
+  pry
   pry-rails
   rails (= 4.2.6)
   rails-api
+  rgeo
   spring
 
 BUNDLED WITH
