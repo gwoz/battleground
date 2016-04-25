@@ -56,16 +56,10 @@ ActiveRecord::Schema.define(version: 20160423194916) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",      null: false
+    t.string   "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "image_url"
   end
-
-  create_table "users_battles", force: :cascade do |t|
-    t.integer "battle_id", null: false
-    t.integer "user_id",   null: false
-  end
-
-  add_index "users_battles", ["battle_id"], name: "index_users_battles_on_battle_id", using: :btree
-  add_index "users_battles", ["user_id"], name: "index_users_battles_on_user_id", using: :btree
 
 end
