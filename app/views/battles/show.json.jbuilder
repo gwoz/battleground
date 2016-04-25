@@ -7,8 +7,6 @@ json.battle do
     json.description @battle.task.description
   end
   json.users @battle.users do |user|
-    json.id user.id
-    json.username user.username
-    json.image_url user.image_url
+    json.email user.email
   end
 end
