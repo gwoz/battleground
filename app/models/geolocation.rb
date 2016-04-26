@@ -23,6 +23,7 @@ class Geolocation < ActiveRecord::Base
    Geolocation.includes(:user)
      .where(users: {in_battle: false})
      .where("geolocations.created_at > ?", MINUTES_AGO.minutes.ago)
+     .where.not(user: self.user)
   end
 end
 
