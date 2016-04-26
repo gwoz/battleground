@@ -7,9 +7,12 @@ class BattlesController < ApplicationController
     user_response = find_user_response
 
     if user_response == 'decline'
+      # TODO add score
       @user.update(in_battle: false)
+      @challenger.update(in_battle: false)
       @battle.update(winner: @challenger)
     elsif user_response == 'accept'
+      # TODO add score
       @user.update(in_battle: false)
     end
     render nothing: true
