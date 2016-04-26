@@ -4,4 +4,3 @@ Rails.application.routes.draw do
   post 'accept_deny' => 'battle#accept_deny'
   resources :users, only: [:create, :show]
 end
-

@@ -14,6 +14,7 @@ class BattlesController < ApplicationController
     elsif user_response == 'accept'
       # TODO add score
       @user.update(in_battle: false)
+      render :accept_deny_response
     end
     render nothing: true
   end
