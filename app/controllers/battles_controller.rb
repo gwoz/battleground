@@ -1,36 +1,27 @@
 class BattlesController < ApplicationController
 
-  def accept_deny
-    @user = find_user_by_email
-    @challegner = find_challenger_by_email
-    @battle = find_battle_by_id
-    user_response = find_user_response
+  def decline
+    battle_json = JSON.parse(request.body.string)
+    @user = User.find_by(email: battle_json['battle']['users'][0]['email'])
+    @challenger = User.find_by(email: battle_json['battle']['users'][1]['email'])
+    @battle = Battle.find_by(id: battle_json['battle']['id'])
 
-    if user_response == 'decline'
-      # TODO add score
-      @user.update(in_battle: false)
-      @challenger.update(in_battle: false)
-      @battle.update(winner: @challenger)
-    elsif user_response == 'accept'
-      # TODO add score
-      @user.update(in_battle: false)
-      render :accept_deny_response
-    end
-    render nothing: true
+    @user.update(in_battle: false)
+    @challenger.update(in_battle: false)
+    @battle.update(winner: @challenger.id)
+    @battle.update(loser: @user.id)
+
+
+    render json: @battle
   end
 
-  private
+  def accept
+    battle_json = JSON.parse(request.body.string)
+    @user = User.find_by(email: battle_json['battle']['users'][0]['email'])
+    @challenger = User.find_by(email: battle_json['battle']['users'][1]['email'])
+    @battle = Battle.find_by(id: battle_json['battle']['id'])
 
-  def find_user_by_email
-  end
-
-  def find_challenger_by_email
-  end
-
-  def find_battle_by_id
-  end
-
-  def find_user_response
+    render json: @battle
   end
 
 end

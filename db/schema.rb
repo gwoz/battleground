@@ -18,8 +18,11 @@ ActiveRecord::Schema.define(version: 20160423194916) do
   enable_extension "postgis"
 
   create_table "battles", force: :cascade do |t|
-    t.integer "winner"
-    t.integer "task_id"
+    t.integer  "winner"
+    t.integer  "loser"
+    t.integer  "task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "battles_users", force: :cascade do |t|

@@ -34,6 +34,6 @@ puts 'Added tasks'
 
 task_ids = [1,2,3]
 
-25.times do User.find(user_ids.sample).battles << Battle.create({task_id: task_ids.sample, winner: task_ids.sample}) end
+25.times do User.find(user_ids.sample).battles << Battle.create({task_id: task_ids.sample}) end
 
 puts 'Added battles'
