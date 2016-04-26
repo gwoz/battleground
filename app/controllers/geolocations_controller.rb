@@ -1,5 +1,6 @@
 class GeolocationsController < ApplicationController
   def create
+    @data = JSON.parse(request.body.string)
     @user = find_user_by_email
     @user_geolocation = Geolocation.create(user: @user, lonlat: make_wkt_point)
 
@@ -7,10 +8,8 @@ class GeolocationsController < ApplicationController
     if @challenger
       @challenger_geolocation = @challenger.geolocations.last
 
-      # @user.in_battle = true
-      # @user.save
-      # @challenger.in_battle = true
-      # @challenger.save
+      @user.update(in_battle: true)
+      @challenger.update(in_battle: true)
 
       @battle = Battle.create(task_id: 1)
       @battle.users << @user
@@ -24,12 +23,12 @@ class GeolocationsController < ApplicationController
   private
 
   def find_user_by_email
-    User.find_by(email: params[:email])
+    User.find_by(email: @data['user'])
   end
 
   def make_wkt_point
-    longitude = params[:geolocation][:coords][:longitude]
-    latitude = params[:geolocation][:coords][:latitude]
+    longitude = @data['location']['coords']['longitude']
+    latitude = @data['location']['coords']['latitude']
     "POINT (#{longitude} #{latitude})"
   end
 end
