@@ -32,24 +32,9 @@ ActiveRecord::Schema.define(version: 20160423194916) do
 
   create_table "geolocations", force: :cascade do |t|
     t.integer   "user_id"
-    t.float     "speed"
-    t.geography "lonlat",              limit: {:srid=>4326, :type=>"point", :geographic=>true}
-    t.float     "accuracy"
-    t.float     "heading"
-    t.float     "altitude"
-    t.float     "altitude_accuracy"
-    t.boolean   "is_heartbeat"
-    t.boolean   "sample"
-    t.boolean   "is_moving"
-    t.float     "odometer"
-    t.string    "uuid"
-    t.string    "activity_type"
-    t.float     "activity_confidence"
-    t.float     "battery_level"
-    t.boolean   "battery_is_charging"
-    t.string    "app_timestamp"
-    t.datetime  "created_at",                                                                   null: false
-    t.datetime  "updated_at",                                                                   null: false
+    t.geography "lonlat",     limit: {:srid=>4326, :type=>"point", :geographic=>true}
+    t.datetime  "created_at",                                                          null: false
+    t.datetime  "updated_at",                                                          null: false
   end
 
   create_table "tasks", force: :cascade do |t|
