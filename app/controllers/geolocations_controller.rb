@@ -8,8 +8,8 @@ class GeolocationsController < ApplicationController
     if @challenger
       @challenger_geolocation = @challenger.geolocations.last
 
-      @user.update(in_battle: true)
-      @challenger.update(in_battle: true)
+      # @user.update(in_battle: true)
+      # @challenger.update(in_battle: true)
 
       @battle = Battle.create(task_id: 1)
       @battle.users << @user
