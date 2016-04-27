@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
 	def index
-		@users = order_all_users
-		binding.pry
+		@users = User.all.order(points: :desc)
+		render json: @users
 	end
 	
 	def create

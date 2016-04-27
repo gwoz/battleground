@@ -6,10 +6,6 @@ class User < ActiveRecord::Base
   WIN_VALUE = 15
   LOSS_VALUE = 5
 
-  def order_all_users
-    User.all.order(points: desc)
-  end
-
   def update_total_points
   	self.points = get_win_count * WIN_VALUE - get_loss_count * LOSS_VALUE
   	self.save
