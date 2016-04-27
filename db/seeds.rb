@@ -1,7 +1,7 @@
 # Users
-users = [{email: 'brett@example.com'},
-         {email: 'mike@example.com'},
-         {email: 'john@example.com'}
+users = [{email: 'brett@example.com', avatar: 'http://cdn.hitfix.com/photos/6203942/deadpool-australia-day.jpg'},
+         {email: 'mike@example.com',  avatar: 'http://cdn.hitfix.com/photos/6203942/deadpool-australia-day.jpg'},
+         {email: 'john@example.com',  avatar: 'http://cdn.hitfix.com/photos/6203942/deadpool-australia-day.jpg'}
         ]
 
 users.each do |user|
