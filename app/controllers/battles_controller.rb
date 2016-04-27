@@ -23,6 +23,8 @@ class BattlesController < ApplicationController
     unless @battle.winner
       @battle.update(winner: @user.id)
       @battle.update(loser: @challenger.id)
+      @user.update_total_points
+      @challenger.update_total_points
     end
     @winner_react = User.find(@battle.winner)
 
