@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160423194916) do
     t.string   "email",                      null: false
     t.boolean  "in_battle",  default: false
     t.string   "avatar"
+    t.integer  "points",     default: 0
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 		@users = User.all.order(points: :desc)
 		render json: @users
 	end
-
+	
 	def create
 		user_data = JSON.parse(request.body.string)
 		@user = User.find_by(email: user_data['email'])

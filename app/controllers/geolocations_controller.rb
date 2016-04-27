@@ -14,9 +14,10 @@ class GeolocationsController < ApplicationController
       @battle = Battle.create(task_id: 1)
       @battle.users << @user
       @battle.users << @challenger
+
       render :show
     else
-      render nothing: true
+      render json: @user
     end
   end
 
