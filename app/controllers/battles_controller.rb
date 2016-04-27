@@ -11,17 +11,21 @@ class BattlesController < ApplicationController
     @battle.update(winner: @challenger.id)
     @battle.update(loser: @user.id)
 
-
-    render json: @battle
+    render :winner
   end
 
-  def accept
+  def quickdraw
     battle_json = JSON.parse(request.body.string)
     @user = User.find_by(email: battle_json['battle']['users'][0]['email'])
     @challenger = User.find_by(email: battle_json['battle']['users'][1]['email'])
     @battle = Battle.find_by(id: battle_json['battle']['id'])
 
-    render json: @battle
-  end
+    unless @battle.winner
+      @battle.update(winner: @user.id)
+      @battle.update(loser: @challenger.id)
+    end
+    @winner_react = User.find(@battle.winner)
 
+    render json: @winner_react
+  end
 end
