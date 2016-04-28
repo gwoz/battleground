@@ -20,7 +20,7 @@ gem 'pry'
 # To use Jbuilder templates for JSON
 gem 'jbuilder'
 
-ruby '2.2.4'
+ruby '2.2.1'
 # Use unicorn as the app server
 # gem 'unicorn'
 
