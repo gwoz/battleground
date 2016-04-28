@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.6'
+gem 'rails_12factor', group: :production
 
 gem 'rails-api'
 
@@ -19,6 +20,7 @@ gem 'pry'
 # To use Jbuilder templates for JSON
 gem 'jbuilder'
 
+ruby '2.2.4'
 # Use unicorn as the app server
 # gem 'unicorn'
 
