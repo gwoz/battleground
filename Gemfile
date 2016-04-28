@@ -11,8 +11,8 @@ gem 'pg'
 gem 'pry-rails'
 
 gem 'rgeo'
-gem 'activerecord-postgis-adapter'
-gem 'pry'
+gem 'activerecord-postgis-adapter', '~> 4.0.0.beta'
+hgem 'pry'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
