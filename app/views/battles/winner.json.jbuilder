@@ -11,7 +11,9 @@ json.battle do
     json.avatar user.avatar
   end
 
- json.battle_winner do
- 	json.winnerAvatar @battle_winner.avatar
- end
+  if json.battle_winner
+    json.battle_winner do
+   	  json.winnerAvatar @battle_winner.avatar
+    end
+  end
 end
